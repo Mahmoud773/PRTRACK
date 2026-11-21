@@ -1,0 +1,118 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "executiveVisible", "order": "ASCENDING"},
+        {"fieldPath": "tab", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "scope", "order": "ASCENDING"},
+        {"fieldPath": "executiveVisible", "order": "ASCENDING"},
+        {"fieldPath": "tab", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "procurementVisible", "order": "ASCENDING"},
+        {"fieldPath": "tab", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "warehouseFifthOfficer", "order": "ASCENDING"},
+        {"fieldPath": "tab", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "warehouseFifthManager", "order": "ASCENDING"},
+        {"fieldPath": "tab", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "warehouseKourba", "order": "ASCENDING"},
+        {"fieldPath": "tab", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "department", "order": "ASCENDING"},
+        {"fieldPath": "tab", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "creatorUid", "order": "ASCENDING"},
+        {"fieldPath": "tab", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "executiveVisible", "order": "ASCENDING"},
+        {"fieldPath": "stage", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "scope", "order": "ASCENDING"},
+        {"fieldPath": "executiveVisible", "order": "ASCENDING"},
+        {"fieldPath": "stage", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "executiveVisible", "order": "ASCENDING"},
+        {"fieldPath": "stage", "order": "ASCENDING"},
+        {"fieldPath": "closure", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    },
+    {
+      "collectionGroup": "requests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "scope", "order": "ASCENDING"},
+        {"fieldPath": "executiveVisible", "order": "ASCENDING"},
+        {"fieldPath": "stage", "order": "ASCENDING"},
+        {"fieldPath": "closure", "order": "ASCENDING"},
+        {"fieldPath": "updatedAt", "order": "DESCENDING"}
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

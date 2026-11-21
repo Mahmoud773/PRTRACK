@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "643836943331",
+    "project_id": "prtrack-benefit",
+    "storage_bucket": "prtrack-benefit.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643836943331:android:29afe43d1bcbdabf0f5ed6",
+        "android_client_info": {
+          "package_name": "com.benefit.prtrack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPYi5l8lNMWMqrMxwCPZbwRfh1GKaOEQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,67 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null && request.auth.token.active == true;
+    }
+    function level() {
+      return request.auth.token.level;
+    }
+    function department() {
+      return request.auth.token.department;
+    }
+
+    match /usernames/{name} {
+      allow get: if true;
+      allow list, write: if false;
+    }
+
+    match /users/{uid} {
+      allow get: if signedIn() && (request.auth.uid == uid || level() == 'executive' || (level() == 'kourbaDirector' && resource.data.scope == 'kourba'));
+      allow list: if signedIn() && (level() == 'executive' || level() == 'kourbaDirector');
+      allow update: if signedIn() && request.auth.uid == uid && (
+        request.resource.data.diff(resource.data).changedKeys().hasOnly(['lang', 'unread'])
+        || (
+          request.resource.data.diff(resource.data).changedKeys().hasOnly(['lang', 'unread', 'mustChangePassword'])
+          && resource.data.mustChangePassword == true
+          && request.resource.data.mustChangePassword == false
+        )
+      );
+      allow create, delete: if false;
+
+      match /notifications/{id} {
+        allow read: if signedIn() && request.auth.uid == uid;
+        allow update: if signedIn() && request.auth.uid == uid
+          && request.resource.data.diff(resource.data).changedKeys().hasOnly(['read']);
+        allow create, delete: if false;
+      }
+
+      match /tokens/{id} {
+        allow read, write: if signedIn() && request.auth.uid == uid;
+      }
+    }
+
+    match /requests/{id} {
+      allow read: if signedIn() && (
+        level() == 'executive'
+        || (level() == 'kourbaDirector' && resource.data.scope == 'kourba' && resource.data.executiveVisible == true)
+        || resource.data.creatorUid == request.auth.uid
+        || (level() == 'deptManager' && department() == resource.data.department)
+        || (level() == 'procurementOfficer' && resource.data.procurementVisible == true)
+        || (department() == 'warehouseFifth' && level() == 'warehouseOfficer' && resource.data.warehouseFifthOfficer == true)
+        || (department() == 'warehouseFifth' && level() == 'warehouseManager' && resource.data.warehouseFifthManager == true)
+        || (department() == 'warehouseKourba' && resource.data.warehouseKourba == true)
+      );
+      allow write: if false;
+    }
+
+    match /stats/{id} {
+      allow read: if signedIn() && (level() == 'executive' || level() == 'kourbaDirector');
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
